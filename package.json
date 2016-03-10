@@ -1,0 +1,11 @@
+{
+  "name": "interesting-youtube-videos",
+  "version": "1.0.0",
+  "description": "A webpage for listing interesting YouTube videos.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["youtube", "videos"],
+  "author": "Alpha Shuro",
+  "license": "ISC"
+}
