@@ -3,9 +3,17 @@
   "version": "1.0.0",
   "description": "A webpage for listing interesting YouTube videos.",
   "scripts": {
-    "test": "xo",
+    "test": "npm run lint",
+    "lint": "xo",
     "build": "webpack --colors --progress",
     "dev": "npm run build -- --watch"
+  },
+  "xo": {
+    "env": [
+    	"browser",
+    	"node"
+  	],
+    "extends": "xo-react"
   },
   "keywords": [
     "youtube",
@@ -21,6 +29,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-2": "^6.5.0",
     "babel-register": "^6.6.5",
+    "eslint-plugin-react": "^4.2.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-redux": "^4.4.0",
