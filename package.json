@@ -7,6 +7,12 @@
     "lint": "xo",
     "build": "webpack --colors --progress",
     "dev": "npm run build -- --watch"
+    "check": "python manage.py check",
+    "check:deploy": "npm run check -- --deploy",
+    "migrate": "python manage.py migrate",
+    "serve": "python manage.py runserver",
+    "start": "npm run build && npm run serve",
+    "startdev": "npm run dev && npm run serve"
   },
   "xo": {
     "env": [
