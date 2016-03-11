@@ -13,13 +13,13 @@
     "migrate": "python manage.py migrate",
     "serve": "python manage.py runserver",
     "start": "npm run build && npm run serve",
-    "startdev": "npm run dev && npm run serve"
+    "startdev": "npm run dev & npm run serve"
   },
   "xo": {
     "env": [
-    	"browser",
-    	"node"
-  	],
+      "browser",
+      "node"
+    ],
     "extends": "xo-react"
   },
   "keywords": [
