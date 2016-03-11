@@ -9,6 +9,12 @@ module.exports = function (wallaby) {
 		tests: [
 			'assets/js/**/tests/**/*.js'
 		],
+    compilers: {
+      '**/*.js*': wallaby.compilers.babel({
+        babel: load('babel-core'),
+        presets: [ 'es2015', 'stage-2', 'react' ]
+      })
+    },
 		preprocessors: {
 		 '**/*.js': file => require('babel-core').transform(file.content, {sourceMap: true, presets: ['es2015', 'react', 'stage-2'] })
 		},
