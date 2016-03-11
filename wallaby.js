@@ -4,23 +4,22 @@ module.exports = function (wallaby) {
 		files: [
 			'assets/js/components/*.jsx',
 			'assets/js/containers/*.js',
-			'assets/js/store/*.js',
+			'assets/js/store/*.js'
 		],
 		tests: [
 			'assets/js/**/tests/**/*.js'
 		],
-    compilers: {
-      '**/*.js*': wallaby.compilers.babel({
-        babel: load('babel-core'),
-        presets: [ 'es2015', 'stage-2', 'react' ]
-      })
-    },
+		compilers: {
+			'**/*.js*': wallaby.compilers.babel({
+				babel: load('babel-core'),
+				presets: ['es2015', 'stage-2', 'react']
+			})
+		},
 		preprocessors: {
-		 '**/*.js': file => require('babel-core').transform(file.content, {sourceMap: true, presets: ['es2015', 'react', 'stage-2'] })
+			'**/*.js': file => require('babel-core').transform(file.content, {sourceMap: true, presets: ['es2015', 'react', 'stage-2']})
 		},
 		testFramework: 'mocha',
 		env: {
-			type: 'browser',
 			type: 'node'
 		},
 		setup: function () {
