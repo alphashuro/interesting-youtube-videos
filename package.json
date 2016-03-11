@@ -16,11 +16,20 @@
     "startdev": "npm run dev & npm run serve"
   },
   "xo": {
+  	"ignores": [
+  		"bundles/**/*"
+		],
     "env": [
       "browser",
       "node"
     ],
-    "extends": "xo-react"
+    "extends": "xo-react",
+    "rules": {
+    	"react/jsx-no-bind": [0, {
+    		"ignoreRefs": true,
+    		"allowArrowFunctions": true
+    		}]
+    }
   },
   "keywords": [
     "youtube",
