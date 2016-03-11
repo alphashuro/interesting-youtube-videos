@@ -4,7 +4,7 @@ import {shallow} from 'enzyme';
 import {spy} from 'sinon';
 
 import React from 'react';
-import VideosListItem from './VideosListItem.jsx';
+import VideosListItem from '../VideosListItem.jsx';
 
 describe('VideosListItem component', () => {
 	const getVideo = () => ({

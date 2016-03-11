@@ -4,7 +4,7 @@ import {shallow} from 'enzyme';
 import {spy} from 'sinon';
 
 import React from 'react';
-import VideosList from './VideosList.jsx';
+import VideosList from '../VideosList.jsx';
 
 describe('VideosList component', () => {
 	it('should render a list of videos', () => {
