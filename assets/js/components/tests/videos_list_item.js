@@ -17,7 +17,7 @@ describe('VideosListItem component', () => {
 		const props = getVideo();
 
 		const item = shallow(<VideosListItem {...props}/>);
-		const url = item.find(`a[href="${props.url}"]`);
+		const url = item.find({href: props.url});
 
 		expect(url.length).to.be.equal(1);
 	});
