@@ -1,5 +1,5 @@
 const {describe, it} = global;
-import {expect} from 'chai';
+import {expect, assert} from 'chai';
 import {shallow, mount} from 'enzyme';
 import {spy} from 'sinon';
 
@@ -10,43 +10,43 @@ describe('AddVideo component', () => {
 	it('should have an input for the url', () => {
 		const component = shallow(<AddVideo/>);
 
-		const urlInput = component.find('input[name="url"]')
+		const urlInput = component.find('input[name="url"]');
 		expect(urlInput.length).to.be.equal(1);
 	});
 	describe('the url input', () => {
 		it('should be required', () => {
 			const component = shallow(<AddVideo/>);
 
-			const urlInput = component.find('input[name="url" required');
-			expect(urlInput.length).to.be.equal(1);
+			const urlInput = component.find('input[name="url"]');
+			expect(urlInput.prop('required')).to.be.equal(true);
 		});
 	});
 	it('should have an input for the title', () => {
 		const component = shallow(<AddVideo/>);
 
-		const titleInput = component.find('input[name="title"]')
+		const titleInput = component.find('input[name="title"]');
 		expect(titleInput.length).to.be.equal(1);
 	});
 	describe('the title input', () => {
 		it('should be optional', () => {
 			const component = shallow(<AddVideo/>);
 
-			const titleInput = component.find('input[name="title" required]');
-			expect(titleInput.length).to.be.equal(0);
+			const titleInput = component.find('input[name="title"]');
+			assert.notOk(titleInput.prop('required'));
 		});
 	});
 	it('should have an input for the description', () => {
 		const component = shallow(<AddVideo/>);
 
-		const descriptionInput = component.find('input[name="description"]')
+		const descriptionInput = component.find('input[name="description"]');
 		expect(descriptionInput.length).to.be.equal(1);
 	});
 	describe('the description input', () => {
 		it('should be optional', () => {
 			const component = shallow(<AddVideo/>);
 
-			const descriptionInput = component.find('input[name="description" required]');
-			expect(descriptionInput.length).to.be.equal(0);
+			const descriptionInput = component.find('input[name="description"]');
+			assert.notOk(descriptionInput.prop('required'));
 		});
 	});
 	it('should have a save button', () => {
@@ -64,6 +64,9 @@ describe('AddVideo component', () => {
 
 			const component = mount(<AddVideo {...props}/>);
 
+			const urlInput = component.find('input[name="url"]').get(0);
+			urlInput.value = 'test';
+
 			const saveBtn = component.find('button.save');
 			saveBtn.simulate('click');
 
@@ -78,9 +81,9 @@ describe('AddVideo component', () => {
 
 			const component = mount(<AddVideo {...props}/>);
 
-			const urlInput = component.find('input[name="url"]');
-			const titleInput = component.find('input[name="title"]');
-			const descriptionInput = component.find('input[name="description"]');
+			const urlInput = component.find('input[name="url"]').get(0);
+			const titleInput = component.find('input[name="title"]').get(0);
+			const descriptionInput = component.find('input[name="description"]').get(0);
 
 			urlInput.value = 'http://new_url';
 			titleInput.value = 'new_title';
@@ -105,9 +108,9 @@ describe('AddVideo component', () => {
 
 			const component = mount(<AddVideo {...props}/>);
 
-			const urlInput = component.find('input[name="url"]');
-			const titleInput = component.find('input[name="title"]');
-			const descriptionInput = component.find('input[name="description"]');
+			const urlInput = component.find('input[name="url"]').get(0);
+			const titleInput = component.find('input[name="title"]').get(0);
+			const descriptionInput = component.find('input[name="description"]').get(0);
 
 			urlInput.value = '';
 			titleInput.value = 'new_title';
@@ -116,7 +119,7 @@ describe('AddVideo component', () => {
 			const saveBtn = component.find('button.save');
 
 			saveBtn.simulate('click');
-			expect(props.onSave).to.be.equal(false);
+			expect(props.onSave.called).to.be.equal(false);
 		});
 	});
 	it('should have a cancel button', () => {
