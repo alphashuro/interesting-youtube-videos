@@ -10,7 +10,7 @@
     "check": "python manage.py check",
     "check:deploy": "npm run check -- --deploy",
     "migrate": "python manage.py migrate",
-    "serve": "python manage.py runserver",
+    "serve": "python manage.py runserver 0.0.0.0:8000",
     "start": "npm run build && npm run serve",
     "startdev": "npm run dev && npm run serve"
   },
