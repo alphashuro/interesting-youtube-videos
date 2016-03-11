@@ -1,7 +1,8 @@
 import React, {PropTypes} from 'react';
 import VideosListItem from '../containers/VideosListItem';
+import AddVideo from '../containers/AddVideo';
 
-const VideosList = ({videos, onAddVideo}) => (
+const VideosList = ({videos, showAddingVideo, onAddVideo}) => (
 	<div>
 		<button
 			className="add"
@@ -9,6 +10,9 @@ const VideosList = ({videos, onAddVideo}) => (
 			>
 				Add a Video
 		</button>
+		{
+			showAddingVideo ? <AddVideo /> : null
+		}
 		<ul>
 			{
 				videos.map(video => (
@@ -24,7 +28,8 @@ const VideosList = ({videos, onAddVideo}) => (
 
 VideosList.propTypes = {
 	videos: PropTypes.array.isRequired,
-	onAddVideo: PropTypes.func.isRequired
+	onAddVideo: PropTypes.func.isRequired,
+	showAddingVideo: PropTypes.bool.isRequired
 };
 
 export default VideosList;
