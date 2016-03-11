@@ -58,6 +58,7 @@ const AddVideo = React.createClass({
 					className="cancel"
 					onClick={onCancel}
 					>
+					Cancel
 				</button>
 			</div>
 		);
