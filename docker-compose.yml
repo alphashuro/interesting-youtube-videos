@@ -1,0 +1,16 @@
+version: "2"
+services:
+  db:
+    image: postgres
+  web:
+    build: .
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+    command: bash /code/start-docker.sh
+    volumes:
+      - .:/code
+    ports:
+      - "8080:8000"
+    depends_on:
+      - db
