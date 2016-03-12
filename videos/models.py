@@ -8,4 +8,7 @@ class Video(models.Model):
     url = models.URLField(unique=True)
 
     def __str__(self):
-        return self.url
+        if self.title:
+            return self.title
+        else:
+            return self.url
