@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A webpage for listing interesting YouTube videos.",
   "scripts": {
-    "test": "npm run lint",
+    "test": "npm run lint && npm run test:django",
     "lint": "xo",
     "build": "webpack --colors --progress",
     "dev": "npm run build -- --watch",
