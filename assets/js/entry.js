@@ -8,5 +8,5 @@ render(
 	<Provider store={store}>
 		<App/>
 	</Provider>,
-	document.getElementById('app-root')
+	document.body
 );
