@@ -92,9 +92,11 @@ WSGI_APPLICATION = 'interesting_youtube_videos.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'videos',
-        'USER': 'postgres'
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'HOST': os.getenv('DB', ''),
+        'PORT': 5432
     }
 }
 
