@@ -12,7 +12,8 @@
     "migrate": "python manage.py migrate",
     "serve": "python manage.py runserver 0.0.0.0:8000",
     "start": "npm run build && npm run serve",
-    "startdev": "npm run dev && npm run serve"
+    "startdev": "npm run dev && npm run serve",
+    "test:django": "python manage.py test videos"
   },
   "xo": {
     "env": [
