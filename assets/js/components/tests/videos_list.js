@@ -22,13 +22,17 @@ describe('VideosList component', () => {
 		expect(items.length).to.be.equal(3);
 	});
 	it('should have a button to add a video', () => {
-		const list = shallow(<VideosList/>);
+		const props = {
+			videos: []
+		};
+		const list = shallow(<VideosList {...props}/>);
 		const button = list.find('button.add');
 
 		expect(button.length).to.be.equal(1);
 	});
 	it('should call onAddVideo when the add button is clicked', () => {
 		const props = {
+			videos: [],
 			onAddVideo: spy()
 		};
 
