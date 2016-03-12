@@ -10,3 +10,4 @@ ADD requirements.txt /code/
 RUN pip install -r requirements.txt
 ADD . /code/
 EXPOSE 8000
+CMD ./start-docker.sh
