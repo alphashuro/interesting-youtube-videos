@@ -11,7 +11,7 @@ const VideosList = ({videos, showAddingVideo, onAddVideo}) => (
 				Add a Video
 		</button>
 		{
-			showAddingVideo ? <AddVideo /> : null
+			showAddingVideo ? <AddVideo/> : null
 		}
 		<ul>
 			{
