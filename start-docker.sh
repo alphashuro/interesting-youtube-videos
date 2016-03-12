@@ -5,7 +5,7 @@ echo "waiting for db..."
 while ! nc -w 1 -z $DB_HOST $DB_PORT 2>/dev/null;
 do
   echo -n .
-  sleep 5
+  sleep 1
 done
 
 echo "db ready"
