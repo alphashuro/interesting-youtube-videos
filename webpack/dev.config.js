@@ -40,7 +40,7 @@ const babelSettings = {
 config.module.loaders.push({
 	test: /\.jsx?$/,
 	exclude: /node_modules/,
-	loaders: ['react-hot', 'babel?'+JSON.stringify(babelSettings)]
+	loaders: ['react-hot', 'babel?' + JSON.stringify(babelSettings)]
 });
 
 module.exports = config;
