@@ -15,7 +15,7 @@
     "serve:dev": "python manage.py runserver 0.0.0.0:8000",
     "serve:prod": "PYTHON_ENV='production' python manage.py runserver 0.0.0.0:80",
     "start": "npm run build:prod && npm run serve:prod",
-    "startdev": "npm run watch && npm run serve:dev",
+    "startdev": "npm run watch & npm run serve:dev",
     "test:django": "python manage.py test videos"
   },
   "xo": {
