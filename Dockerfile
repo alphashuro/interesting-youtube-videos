@@ -8,10 +8,11 @@ COPY mysite_nginx.conf /code/
 RUN ln -s /code/mysite_nginx.conf /etc/nginx/sites-enabled/
 RUN /etc/init.d/nginx start
 ENV PYTHONUNBUFFERED 1
-ADD requirements.txt /code/
+COPY requirements.txt /code/
 RUN pip install -r requirements.txt
-ADD package.json /code/
+COPY package.json /code/
+COPY README.md /code/
 RUN npm install
-ADD . /code/
+COPY . /code/
 EXPOSE 80
 CMD ./start-docker.sh
