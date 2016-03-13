@@ -1,7 +1,11 @@
 {
   "name": "interesting-youtube-videos",
   "version": "1.0.0",
-  "description": "A webpage for listing interesting YouTube videos.",
+  "description": "A simple app that displays a list of interesting youtube videos.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:alphashuro/interesting-youtube-videos.git"
+  },
   "scripts": {
     "test": "npm run lint && npm run testonly",
     "testonly": "mocha --require mocha.config.js assets/js/**/tests/**/*.js --compilers js:babel-core/register  && npm run test:django",
