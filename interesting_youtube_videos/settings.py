@@ -30,7 +30,8 @@ STATICFILES_DIRS = (
 SECRET_KEY = 'u!wazqv=3yr1^%ummaig347f*%8h)jhu@@f9_6fmh*@9u=3k84'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+env = os.getenv('PYTHON_ENV', 'debug')
+DEBUG = True if (env == 'debug') else False
 
 ALLOWED_HOSTS = ['*']
 
