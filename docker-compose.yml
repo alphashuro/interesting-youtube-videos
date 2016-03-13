@@ -7,10 +7,12 @@ services:
     environment:
       - DB_HOST=db
       - DB_PORT=5432
+      - PYTHON_ENV='production'
+      - NODE_ENV='production'
     command: bash /code/start-docker.sh
     volumes:
       - .:/code
     ports:
-      - "8080:8000"
+      - "8000:80"
     depends_on:
       - db

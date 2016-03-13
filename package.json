@@ -15,11 +15,10 @@
     "watch": "node webpack/server.js",
     "check": "python manage.py check",
     "check:prod": "npm run check -- --deploy",
-    "update_data": "python manage.py makemigrations && python manage.py migrate",
     "serve:dev": "python manage.py runserver 0.0.0.0:8000",
-    "serve:prod": "PYTHON_ENV='production' python manage.py runserver 0.0.0.0:80",
+    "serve:prod": "PYTHON_ENV='production' python manage.py runserver",
     "start": "npm run build:prod && npm run serve:prod",
-    "startdev": "npm run watch & npm run serve:dev",
+    "start:dev": "npm run watch & npm run serve:dev",
     "test:django": "python manage.py test videos"
   },
   "xo": {
