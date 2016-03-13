@@ -22,14 +22,6 @@ STATICFILES_DIRS = (
     # to the STATIC_ROOT or syncs them to whatever storage we use.
 )
 
-WEBPACK_LOADER = {
-  'DEFAULT': {
-      'BUNDLE_DIR_NAME': 'bundles/',
-      'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
-      'POLL_INTERVAL': 0.1,
-      'IGNORE': ['.+\.hot-update.js', '.+\.map']
-  }
-}
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -44,6 +36,23 @@ ALLOWED_HOSTS = ['*']
 
 
 # Application definition
+
+WEBPACK_LOADER = {
+  'DEFAULT': {
+      'BUNDLE_DIR_NAME': 'bundles/',
+      'STATS_FILE': os.path.join(BASE_DIR, 'webpack/stats.json'),
+      'POLL_INTERVAL': 0.1,
+      'IGNORE': ['.+\.hot-update.js', '.+\.map']
+  }
+}
+
+if not DEBUG:
+    WEBPACK_LOADER = {
+      'DEFAULT': {
+          'BUNDLE_DIR_NAME': 'dist/',
+          'STATS_FILE': os.path.join(BASE_DIR, 'webpack/stats-prod.json')
+      }
+    }
 
 INSTALLED_APPS = (
     'videos.apps.VideosConfig',
