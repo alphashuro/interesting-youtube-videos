@@ -1,4 +1,5 @@
 FROM python:2.7
+MAINTAINER alphashuro
 RUN curl -sL https://deb.nodesource.com/setup_4.x | bash -
 RUN apt-get install nodejs netcat nginx -y
 RUN rm /etc/nginx/sites-enabled/default
