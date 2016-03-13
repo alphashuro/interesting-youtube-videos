@@ -17,9 +17,10 @@
     "test:django": "python manage.py test videos"
   },
   "xo": {
-  	"ignores": [
-  		"bundles/**/*"
-		],
+    "ignores": [
+      "bundles/**/*",
+      "node_modules/**/*"
+    ],
     "env": [
       "browser",
       "node"
