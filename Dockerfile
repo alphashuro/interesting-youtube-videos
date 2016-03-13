@@ -15,4 +15,5 @@ COPY README.md /code/
 RUN npm install
 COPY . /code/
 EXPOSE 80
+RUN chmod +x ./start-docker.sh
 CMD ./start-docker.sh
