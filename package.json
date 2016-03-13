@@ -6,7 +6,7 @@
     "test": "npm run lint && npm run testonly",
     "testonly": "mocha --require mocha.config.js assets/js/**/tests/**/*.js --compilers js:babel-core/register  && npm run test:django",
     "lint": "xo assets/js/**/* server.js",
-    "build:prod": "webpack --config webpack/prod.config.js --progress --colors",
+    "build:prod": "NODE_ENV='production' webpack --config webpack/prod.config.js --progress --colors",
     "build:dev": "webpack --config webpack/dev.config.js --progress --colors",
     "watch": "node webpack/server.js",
     "check": "python manage.py check",
