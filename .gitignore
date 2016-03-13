@@ -6,3 +6,4 @@ assets/bundles
 assets/dist
 *.pyc
 .coverage
+static
