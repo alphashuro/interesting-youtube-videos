@@ -27,10 +27,13 @@
     ],
     "extends": "xo-react",
     "rules": {
-    	"react/jsx-no-bind": [0, {
-    		"ignoreRefs": true,
-    		"allowArrowFunctions": true
-    		}]
+      "react/jsx-no-bind": [
+        0,
+        {
+          "ignoreRefs": true,
+          "allowArrowFunctions": true
+        }
+      ]
     }
   },
   "keywords": [
