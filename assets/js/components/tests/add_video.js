@@ -7,50 +7,77 @@ import React from 'react';
 import AddVideo from '../AddVideo.jsx';
 
 describe('AddVideo component', () => {
+	const getProps = () => ({
+		onSave: spy(),
+		onCancel: spy()
+	});
 	it('should have an input for the url', () => {
-		const component = shallow(<AddVideo/>);
+		const props = getProps();
+
+		const component = shallow(<AddVideo {...props}/>);
 
 		const urlInput = component.find('input[name="url"]');
 		expect(urlInput.length).to.be.equal(1);
 	});
 	describe('the url input', () => {
 		it('should be required', () => {
-			const component = shallow(<AddVideo/>);
+			const props = {
+				onSave: () => {},
+				onCancel: () => {}
+			};
+
+			const component = shallow(<AddVideo {...props}/>);
 
 			const urlInput = component.find('input[name="url"]');
 			expect(urlInput.prop('required')).to.be.equal(true);
 		});
 	});
 	it('should have an input for the title', () => {
-		const component = shallow(<AddVideo/>);
+		const props = getProps();
+
+		const component = shallow(<AddVideo {...props}/>);
 
 		const titleInput = component.find('input[name="title"]');
 		expect(titleInput.length).to.be.equal(1);
 	});
 	describe('the title input', () => {
 		it('should be optional', () => {
-			const component = shallow(<AddVideo/>);
+			const props = {
+				onSave: () => {},
+				onCancel: () => {}
+			};
+
+			const component = shallow(<AddVideo {...props}/>);
 
 			const titleInput = component.find('input[name="title"]');
 			assert.notOk(titleInput.prop('required'));
 		});
 	});
 	it('should have an input for the description', () => {
-		const component = shallow(<AddVideo/>);
+		const props = getProps();
+
+		const component = shallow(<AddVideo {...props}/>);
 
 		const descriptionInput = component.find('input[name="description"]');
 		expect(descriptionInput.length).to.be.equal(1);
 	});
 	describe('the description input', () => {
 		it('should be optional', () => {
-			const component = shallow(<AddVideo/>);
+			const props = {
+				onSave: () => {},
+				onCancel: () => {}
+			};
+
+			const component = shallow(<AddVideo {...props}/>);
 
 			const descriptionInput = component.find('input[name="description"]');
 			assert.notOk(descriptionInput.prop('required'));
 		});
 	});
 	it('should have a save button', () => {
-		const component = shallow(<AddVideo/>);
+		const props = getProps();
+
+		const component = shallow(<AddVideo {...props}/>);
 
 		const saveBtn = component.find('button.save');
 		expect(saveBtn.length).to.be.equal(1);
@@ -58,9 +85,7 @@ describe('AddVideo component', () => {
 	describe('the save button', () => {
 		it(`should call onSave
 				when save button is clicked`, () => {
-			const props = {
-				onSave: spy()
-			};
+			const props = getProps();
 
 			const component = mount(<AddVideo {...props}/>);
 
@@ -75,9 +100,7 @@ describe('AddVideo component', () => {
 		it(`should call onSave
 				with title, description and url
 				when save button is clicked`, () => {
-			const props = {
-				onSave: spy()
-			};
+			const props = getProps();
 
 			const component = mount(<AddVideo {...props}/>);
 
@@ -102,9 +125,7 @@ describe('AddVideo component', () => {
 		});
 		it(`should not call onSave
 				if url is blank`, () => {
-			const props = {
-				onSave: spy()
-			};
+			const props = getProps();
 
 			const component = mount(<AddVideo {...props}/>);
 
@@ -123,15 +144,15 @@ describe('AddVideo component', () => {
 		});
 	});
 	it('should have a cancel button', () => {
-		const component = shallow(<AddVideo/>);
+		const props = getProps();
+
+		const component = shallow(<AddVideo {...props} />);
 
 		const cancelBtn = component.find('button.cancel');
 		expect(cancelBtn.length).to.be.equal(1);
 	});
 	it('should call onCancel when cancel button is clicked', () => {
-		const props = {
-			onCancel: spy()
-		};
+		const props = getProps();
 
 		const component = mount(<AddVideo {...props}/>);
 

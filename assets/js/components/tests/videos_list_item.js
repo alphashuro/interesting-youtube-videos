@@ -13,8 +13,12 @@ describe('VideosListItem component', () => {
 		description: 'Description',
 		url: 'http://you.tube/video1'
 	});
+	const getProps = () => ({
+		...getVideo(),
+		onDeleteVideo: spy()
+	})
 	it(`should render a link to the video's url`, () => {
-		const props = getVideo();
+		const props = getProps();
 
 		const item = shallow(<VideosListItem {...props}/>);
 		const url = item.find({href: props.url});
@@ -22,7 +26,7 @@ describe('VideosListItem component', () => {
 		expect(url.length).to.be.equal(1);
 	});
 	it(`should render the video's title`, () => {
-		const props = getVideo();
+		const props = getProps();
 
 		const item = shallow(<VideosListItem {...props}/>);
 		const title = item.find({children: props.title});
@@ -30,7 +34,7 @@ describe('VideosListItem component', () => {
 		expect(title.length).to.be.equal(1);
 	});
 	it(`should render the video's description`, () => {
-		const props = getVideo();
+		const props = getProps();
 
 		const item = shallow(<VideosListItem {...props}/>);
 		const description = item.find({children: props.description});
@@ -38,15 +42,14 @@ describe('VideosListItem component', () => {
 		expect(description.length).to.be.equal(1);
 	});
 	it('should have a button to delete a video', () => {
-		const item = shallow(<VideosListItem/>);
+		const props = getProps();
+		const item = shallow(<VideosListItem {...props} />);
 		const del = item.find('button.delete');
 
 		expect(del.length).to.be.equal(1);
 	});
 	it('should call onDeleteVideo when delete button is clicked', () => {
-		const props = {
-			onDeleteVideo: spy()
-		};
+		const props = getProps();
 
 		const item = shallow(<VideosListItem {...props}/>);
 		const del = item.find('button.delete');
