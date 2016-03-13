@@ -10,5 +10,8 @@ done
 
 echo "db ready"
 
-npm run update_data
-npm start
+npm run build:prod
+python manage.py makemigrations
+python manage.py migrate
+python manage.py collectstatic -v0 --noinput
+uwsgi --ini uwsgi.ini
