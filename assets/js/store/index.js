@@ -8,7 +8,7 @@ const store = createStore(
 		thunk // allows us return functions from action creators
 	),
 	// redux dev tools
-	typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : f => f
+	// window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument()
 );
 
 export default store;

@@ -21,7 +21,7 @@ const VideosListItem = ({
 );
 
 VideosListItem.propTypes = {
-	id: PropTypes.string.isRequired,
+	id: PropTypes.number.isRequired,
 	url: PropTypes.string.isRequired,
 	title: PropTypes.string,
 	description: PropTypes.string,

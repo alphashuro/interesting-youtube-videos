@@ -1,15 +1,18 @@
 import {connect} from 'react-redux';
 import VideosList from '../components/VideosList.jsx';
-import {toggleAddingVideo} from '../store/actions';
+import {toggleAddingVideo, fetchVideos} from '../store/actions';
 
 export const mapStateToProps = state => ({
 	videos: state.videos,
 	showAddingVideo: state.addingVideo
 });
 
-export const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = dispatch => ({
 	onAddVideo: () => {
 		dispatch(toggleAddingVideo());
+	},
+	refresh: () => {
+		dispatch(fetchVideos());
 	}
 });
 
