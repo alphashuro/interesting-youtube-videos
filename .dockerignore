@@ -1,0 +1,9 @@
+node_modules
+assets/bundles
+assets/dist
+*.pyc
+npm-
+static
+webpack/stats-prod.json
+webpack/stats.json
+.coverage
