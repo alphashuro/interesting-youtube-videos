@@ -1,0 +1,29 @@
+[
+{
+  "model": "videos.video",
+  "pk": 1,
+  "fields": {
+    "title": "Dota 2 Fails of the Week - Ep. 149",
+    "description": "Dota 2's fails of the week",
+    "url": "https://www.youtube.com/watch?v=Blm0EeLqiVc"
+  }
+},
+{
+  "model": "videos.video",
+  "pk": 2,
+  "fields": {
+    "title": "How Deadpool Should Have Ended",
+    "description": "How Deadpool Should Have Ended. When Negasonic Teenage Warhead causes the whole Helicarrier to collapse, Wade is forced to use maximum effort.",
+    "url": "https://www.youtube.com/watch?v=5vbEcTIAdPs"
+  }
+},
+{
+  "model": "videos.video",
+  "pk": 3,
+  "fields": {
+    "title": "",
+    "description": "",
+    "url": "https://www.youtube.com/watch"
+  }
+}
+]
