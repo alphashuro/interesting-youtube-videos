@@ -10,5 +10,5 @@ done
 
 echo "db ready"
 
-python manage.py migrate
-python manage.py runserver 0.0.0.0:80
+npm run update_data
+npm start
