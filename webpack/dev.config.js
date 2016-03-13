@@ -19,27 +19,28 @@ config.plugins = config.plugins.concat([
 	new BundleTracker({filename: 'webpack/stats.json'})
 ]);
 
+const babelSettings = {
+	plugins: [
+	['react-transform', {
+		transforms: [
+			{
+				transform: 'react-transform-hmr',
+				imports: ['react'],
+				locals: ['module']
+			}, {
+				transform: 'react-transform-catch-errors',
+				imports: ['react', 'redbox-react']
+			}
+		]
+	}]
+	]
+};
+
 // Add a loader for JSX files with react-hot enabled
 config.module.loaders.push({
 	test: /\.jsx?$/,
 	exclude: /node_modules/,
-	loaders: ['react-hot', 'babel'],
-	query: {
-		plugins: [
-		['react-transform', {
-			transforms: [
-				{
-					transform: 'react-transform-hmr',
-					imports: ['react'],
-					locals: ['module']
-				}, {
-					transform: 'react-transform-catch-errors',
-					imports: ['react', 'redbox-react']
-				}
-			]
-		}]
-		]
-	}
+	loaders: ['react-hot', 'babel?'+JSON.stringify(babelSettings)]
 });
 
 module.exports = config;
