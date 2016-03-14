@@ -1,0 +1,32 @@
+.videosListItem {
+	position: relative;
+	box-shadow: 0 0 2px red;
+	padding: 5px;
+	padding: {
+		left: 10px;
+		bottom: 50px;
+	}
+
+	%button {
+		position: absolute;
+		bottom: 5px;
+	}
+
+	.deleteButton {
+		@extend %button;
+		right: 5px;
+	}
+	.link {
+		@extend %button;
+		left: 5px;
+	}
+
+	.title {
+
+	}
+
+	.description {
+
+	}
+
+}

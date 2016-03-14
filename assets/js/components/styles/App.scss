@@ -1,0 +1,39 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@import 'button';
+@import 'variables';
+
+.app {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	display:flex;
+	flex-direction:column;
+	align-items: center;
+
+	width: 600px;
+	box-shadow: 0 0 5px black;
+	margin: {
+		left: auto;
+		right: auto;
+	}
+	padding: {
+		bottom: 5px;
+	}
+
+	.title {
+		height: 50px;
+		width: 100%;
+		background: $main-red;
+		color: $main-white;
+		margin: 0;
+		text-align: center;
+		padding: {
+			top: 20px;
+			bottom: 10px;
+		}
+	}
+
+	.videosList {
+		box-shadow: 0 0 5px black inset;
+	}
+}

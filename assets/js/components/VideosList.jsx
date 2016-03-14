@@ -2,6 +2,8 @@ import React, {PropTypes} from 'react';
 import VideosListItem from '../containers/VideosListItem';
 import AddVideo from '../containers/AddVideo';
 
+import styles from './styles/VideosList.scss';
+
 const VideosList = React.createClass({
 	propTypes: {
 		videos: PropTypes.object.isRequired,
@@ -15,27 +17,30 @@ const VideosList = React.createClass({
 	render() {
 		const {videos, showAddingVideo, onAddVideo, refresh} = this.props;
 		return (
-			<div>
+			<div className={`${this.props.className} ${styles.videosListContainer}`}>
 				{videos.error ? <p>{videos.error.message}</p> : null}
-				<button
-					onClick={() => refresh()}
-					>
-					Refresh
-				</button>
-				<button
-					className="add"
-					onClick={onAddVideo}
-					>
-						Add a Video
-				</button>
+				<div className={styles.actions}>
+					<button
+						onClick={() => refresh()}
+						>
+						Refresh
+					</button>
+					<button
+						className="add"
+						onClick={onAddVideo}
+						>
+							Add a Video
+					</button>
+				</div>
 				{
 					showAddingVideo ? <AddVideo/> : null
 				}
-				<ul>
+				<ul className={styles.videosList}>
 					{
 						videos.items.map(video => (
 							<VideosListItem
 								key={video.id}
+								className={styles.listItem}
 								{...video}
 								/>
 						))

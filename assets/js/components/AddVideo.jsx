@@ -1,5 +1,7 @@
 import React, {PropTypes} from 'react';
 
+import styles from './styles/AddVideo.scss';
+
 const AddVideo = React.createClass({
 	propTypes: {
 		onSave: PropTypes.func.isRequired,
@@ -8,7 +10,7 @@ const AddVideo = React.createClass({
 	render() {
 		const {onSave, onCancel} = this.props;
 		return (
-			<div>
+			<div className={styles.addForm}>
 				<h3>Add a Video</h3>
 				<label htmlFor="url">Url</label>
 				<input

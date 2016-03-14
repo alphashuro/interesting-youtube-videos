@@ -1,0 +1,32 @@
+.videosListContainer {
+	position: relative;
+	padding: {
+		top: 30px;
+		left: 50px;
+		right: 50px;
+		bottom: 30px;
+	}
+
+	.actions {
+		display: flex;
+		justify-content: space-around;
+		.addButton {
+			position: absolute;
+			right: 10px;
+			bottom: 10px;
+		}
+	}
+
+
+	.videosList {
+		list-style: none;
+		padding: 0;
+
+		.listItem {
+			margin: 5px;
+			min-height: 100px;
+			width: 100%;
+		}
+	}
+
+}
