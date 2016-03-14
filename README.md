@@ -12,6 +12,7 @@ This is a simple app that displays a list of interesting youtube videos.
 	* [Django-Tastypie](https://django-tastypie.readthedocs.org/)
 	* [Postgres](http://www.postgresql.org/) (+ [psycopg2](http://initd.org/psycopg/))
 	* [Django-webpack-loader](https://github.com/owais/django-webpack-loader)
+	* [Graphql](http://facebook.github.io/graphql/)
 ### Frontend
 	* [Webpack](https://webpack.github.io/) ([babel](https://babeljs.io/))
 	* [React](https://facebook.github.io/react/) + [Redux](https://github.com/reactjs/redux)

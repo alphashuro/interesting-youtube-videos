@@ -3,3 +3,6 @@ psycopg2
 django-webpack-loader
 django-tastypie
 uwsgi
+graphene[django]
+django-filter
+django-graphiql
