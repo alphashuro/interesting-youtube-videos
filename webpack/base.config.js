@@ -13,6 +13,14 @@ module.exports = {
 	plugins: [],
 
 	module: {
-		loaders: []
+		loaders: [
+			{
+				test: /\.s[ac]ss$/,
+				loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass'
+			}, {
+				test: /\.css$/,
+				loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+			}
+		]
 	}
 };
