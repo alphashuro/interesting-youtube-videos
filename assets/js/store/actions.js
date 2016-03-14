@@ -8,6 +8,7 @@ export function toggleAddingVideo() {
 
 export function addVideo({url, title, description}) {
 	return dispatch => {
+		dispatch(toggleAddingVideo());
 		dispatch(addingVideo());
 		return fetch('video/', {
 			method: 'post',
