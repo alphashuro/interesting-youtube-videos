@@ -15,15 +15,18 @@ ______
 * [Postgres](http://www.postgresql.org/) (+ [psycopg2](http://initd.org/psycopg/))
 * [Django-webpack-loader](https://github.com/owais/django-webpack-loader)
 * [Graphql](http://facebook.github.io/graphql/)
+
 ### Frontend
 * [Webpack](https://webpack.github.io/) ([babel](https://babeljs.io/))
 * [React](https://facebook.github.io/react/) + [Redux](https://github.com/reactjs/redux)
+* [Scss](http://sass-lang.com/) and [Css Modules](https://github.com/css-modules/css-modules)
 * [mocha](https://mochajs.org/) + [wallaby](http://wallabyjs.com/)
 	* [chai](http://chaijs.com/)
 	* [enzme](https://github.com/airbnb/enzyme/)
 	* [sinon](http://sinonjs.org/)
 	* [jsdom](https://github.com/tmpvar/jsdom)
 * [xo](https://github.com/sindresorhus/xo)
+
 ### Deployment
 * [nginx](https://www.nginx.com/)
 * [uwsgi](https://uwsgi-docs.readthedocs.org/)
