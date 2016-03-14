@@ -22,3 +22,6 @@ This is a simple app that displays a list of interesting youtube videos.
 		* [sinon](http://sinonjs.org/)
 		* [jsdom](https://github.com/tmpvar/jsdom)
 	* [xo](https://github.com/sindresorhus/xo)
+
+## Deployment
+a Dockerfile and docker-compose file have been provided for container-based deployment.
