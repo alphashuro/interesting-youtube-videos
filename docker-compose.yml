@@ -10,8 +10,6 @@ services:
       - PYTHON_ENV='production'
       - NODE_ENV='production'
     command: bash /code/start-docker.sh
-    volumes:
-      - .:/code
     ports:
       - "80:80"
     depends_on:
