@@ -14,7 +14,8 @@ RUN pip install -r requirements.txt
 COPY package.json /code/
 COPY README.md /code/
 RUN npm install
-COPY . /code/
+COPY start-docker.sh /code/
+RUN chmod +x start-docker.sh
 EXPOSE 80
-RUN chmod +x ./start-docker.sh
-CMD ./start-docker.sh
+COPY . /code/
+CMD bash start-docker.sh
